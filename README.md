@@ -4,6 +4,8 @@ This service aggregates data from Spark Protocol across multiple chains, providi
 
 This Data Service was initially developed to be used in conjugation with [Spark Nexus](https://github.com/Deepcryptodive/spark-nexus), but it can also be run stand-alone.
 
+_Note: for an Aave-exclusive Data Service, see the [following branch](https://github.com/Deepcryptodive/spark-data-service/tree/aave-nexus)._
+
 ## Features
 
 - Aggregates and serves market data from Spark Lend.
