@@ -1,4 +1,4 @@
-# Data Service for Aave v3 Protocol BOS Component
+# Data Service for Aave v3 Protocol BOS Components
 
 This service aggregates data from the Aave v3 Protocol across multiple chains, providing a crucial link between the [Aave lending market](https://github.com/aave) and applications that wish to utilize its data.
 
@@ -39,7 +39,6 @@ i.e. in the [Cloudflare Dashboard]([url](https://dash.cloudflare.com/)), under `
 
 ## Support Chains (chainID)
 
-
 - Ethereum Mainnet (1)
 - Optimism (10)
 - Gnosis (100)
@@ -47,7 +46,7 @@ i.e. in the [Cloudflare Dashboard]([url](https://dash.cloudflare.com/)), under `
 - Metis (1088)
 - Base (8453)
 - Arbitrum (42161)
-
+- Avalanche (43114)
 
 ## API endpoints
 
