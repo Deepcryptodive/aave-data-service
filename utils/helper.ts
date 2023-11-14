@@ -62,6 +62,14 @@ export const chainConfig: {
     walletBalanceProvider: markets.AaveV3Metis.WALLET_BALANCE_PROVIDER,
   },
 
+  //Aave v3 on Avalanche (43114)
+  [ChainId.avalanche]: {
+    providerRPC: "https://avax-pokt.nodies.app/ext/bc/C/rpc",
+    uiPoolDataProviderAddress: markets.AaveV3Avalanche.UI_POOL_DATA_PROVIDER,
+    lendingPoolAddressProvider: markets.AaveV3Avalanche.POOL_ADDRESSES_PROVIDER,
+    walletBalanceProvider: markets.AaveV3Avalanche.WALLET_BALANCE_PROVIDER,
+  },
+
   //Aave v3 on Fantom (250) -  deprecated
  /*
   [ChainId.fantom]: {
