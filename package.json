@@ -27,9 +27,9 @@
     "wrangler": "^3.0.1"
   },
   "dependencies": {
-    "@aave/contract-helpers": "^1.17.6",
-    "@aave/math-utils": "^1.17.6",
-    "@bgd-labs/aave-address-book": "^1.24.0",
+    "@aave/contract-helpers": "^1.21.0",
+    "@aave/math-utils": "^1.21.0",
+    "@bgd-labs/aave-address-book": "^2.11.0",
     "@cloudflare/workers-types": "^4.20230518.0",
     "@koa/cors": "^4.0.0",
     "bignumber.js": "^9.1.1",
