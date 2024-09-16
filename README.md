@@ -1,22 +1,22 @@
-# Data Service for Spark Protocol BOS Component
+# Data Service for Aave v3 Protocol BOS Components
 
-This service aggregates data from Spark Protocol across multiple chains, providing a crucial link between Spark Lend and applications that wish to utilize its data. [Spark Lend](https://github.com/marsfoundation/sparklend) is a lending market based on the Aave v3 codebase, that is currently live on Gnosis and Ethereum.
+This service aggregates data from the Aave v3 Protocol across multiple chains, providing a crucial link between the [Aave lending market](https://github.com/aave) and applications that wish to utilize its data.
 
-This Data Service was initially developed to be used in conjugation with [Spark Nexus](https://github.com/Deepcryptodive/spark-nexus), but it can also be run stand-alone.
+This Data Service was initially developed to be used in conjugation with [Spark Nexus](https://github.com/Deepcryptodive/spark-nexus), but it can also be run stand-alone. Note that in the current `aave-nexus` branch, Spark Protocol is not supported - only Aave v3.
 
 _Note: for an Aave-exclusive Data Service, see the [following branch](https://github.com/Deepcryptodive/spark-data-service/tree/aave-nexus)._
 
 ## Features
 
-- Aggregates and serves market data from Spark Lend.
+- Aggregates and serves market data from Aave v3
 - Provides user-specific deposit, debt, and health factor information.
-- Supports multiple blockchains (i.e. where Spark Protocol is deployed)
+- Supports multiple blockchains (i.e. where Aave v3 is deployed)
 - Is accesible as public API
 
 ## Getting Started
 
 You can deploy this locally, or have it run on Cloudflare.
-We have deployed it at `https://spark-api.pages.dev/`
+We have deployed it at `https://aave-nexus.pages.dev/`
 
 ### Prerequisites
 
@@ -37,13 +37,18 @@ Before running the service locally, ensure you have the following installed:
 Deploy the service to Cloudflare Pages with the `yarn deploy` command. 
 
 Ensure you have the correct permissions and environmental variables set up.
-i.e. in the [Cloudflare Dashboard]([url](https://dash.cloudflare.com/)), under `Workers & Pages` create a Page with name `spark-api` (or which name you defined in `package.json`). You **do not** need to link it to the Github repo. 
+i.e. in the [Cloudflare Dashboard]([url](https://dash.cloudflare.com/)), under `Workers & Pages` create a Page with name `aave-nexus` (or which name you defined in `package.json`). You **do not** need to link it to the Github repo. 
 
 ## Support Chains (chainID)
 
 - Ethereum Mainnet (1)
+- Optimism (10)
 - Gnosis (100)
-- _For debuggin purposes only:_ Polygon Mainnet (137) (fetching data from Aave v3 on Polygon)
+- Polygon (137)
+- Metis (1088)
+- Base (8453)
+- Arbitrum (42161)
+- Avalanche (43114)
 
 ## API endpoints
 
@@ -53,7 +58,7 @@ i.e. in the [Cloudflare Dashboard]([url](https://dash.cloudflare.com/)), under `
   - Get all available Spark Lend markets
   - `chainId`: Spark Lend supported chain ID
  
-    Example query: https://spark-api.pages.dev/100/markets
+    Example query: https://aave-nexus.pages.dev/100/markets
     
     Example local query: http://localhost:8080/100/markets
 
@@ -64,7 +69,7 @@ i.e. in the [Cloudflare Dashboard]([url](https://dash.cloudflare.com/)), under `
   - `chainId`: Spark Lend supported chain ID
   - `user`: user address
 
-  Example query: https://spark-api.pages.dev/100/deposits/0xca4aD39F872E89Ef23eABd5716363Fc22513E147
+  Example query: https://aave-nexus.pages.dev/100/deposits/0xca4aD39F872E89Ef23eABd5716363Fc22513E147
   
   Example local query: http://localhost:8080/100/deposits/0xca4aD39F872E89Ef23eABd5716363Fc22513E147
 
@@ -75,7 +80,7 @@ i.e. in the [Cloudflare Dashboard]([url](https://dash.cloudflare.com/)), under `
   - `chainId`: Spark Lend supported chain ID
   - `user`: user address
  
-    Example query: https://spark-api.pages.dev/100/debts/0xca4aD39F872E89Ef23eABd5716363Fc22513E147
+    Example query: https://aave-nexus.pages.dev/100/debts/0xca4aD39F872E89Ef23eABd5716363Fc22513E147
     
     Example local query: http://localhost:8080/100/debts/0xca4aD39F872E89Ef23eABd5716363Fc22513E147
 
@@ -89,7 +94,7 @@ i.e. in the [Cloudflare Dashboard]([url](https://dash.cloudflare.com/)), under `
     - `amount`: token USD value
     - `asset`: token address
    
-    Example query: https://spark-api.pages.dev/100/health/0xca4aD39F872E89Ef23eABd5716363Fc22513E147?action=deposit&amount=10&asset=0xe91d153e0b41518a2ce8dd3d7944fa863463a97d
+    Example query: https://aave-nexus.pages.dev/100/health/0xca4aD39F872E89Ef23eABd5716363Fc22513E147?action=deposit&amount=10&asset=0xe91d153e0b41518a2ce8dd3d7944fa863463a97d
     
     Example local query: http://localhost:8080/100/health/0xca4aD39F872E89Ef23eABd5716363Fc22513E147?action=deposit&amount=10&asset=0xe91d153e0b41518a2ce8dd3d7944fa863463a97d
 
